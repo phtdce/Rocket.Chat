@@ -1,0 +1,11 @@
+.git
+.vscode/
+.gitignore
+node_modules/
+LICENSE
+README.md
+docker-compose.yml
+[Dd]ockerfile*
+docker-compose*
+.dockerignore
+tests/e2e/test-failures/
