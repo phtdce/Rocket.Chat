@@ -3,7 +3,7 @@ volumes:
 
 services:
   rocketchat:
-    image: rc/5.2.0:latest
+    image: rocketchat:5.2.0
     restart: on-failure
     environment:
       MONGO_URL: mongodb://mongodb:27017/rocketchat?replicaSet=rs0
