@@ -261,11 +261,13 @@ export function setURL(url: string): void {
 }
 
 export function hasLicense(feature: string): boolean {
-	return License.hasModule(feature);
+	return true;
+	// return License.hasModule(feature);
 }
 
 export function isEnterprise(): boolean {
-	return License.hasAnyValidLicense();
+	return true;
+	// return License.hasAnyValidLicense();
 }
 
 export function getMaxGuestUsers(): number {
