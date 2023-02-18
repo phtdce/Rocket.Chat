@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker';
 
-import { test, expect } from './utils/test';
-import { createTargetChannel } from './utils';
 import { HomeTeam } from './page-objects';
+import { createTargetChannel } from './utils';
+import { test, expect } from './utils/test';
 
 test.use({ storageState: 'admin-session.json' });
 
@@ -33,8 +33,9 @@ test.describe.serial('teams-management', () => {
 	test('expect throw validation error if team name already exists', async () => {
 		await poHomeTeam.sidenav.openNewByLabel('Team');
 		await poHomeTeam.inputTeamName.type(targetTeam);
+		await poHomeTeam.btnTeamCreate.click();
 
-		await expect(poHomeTeam.btnTeamCreate).toBeDisabled();
+		await expect(poHomeTeam.inputTeamName).toHaveAttribute('aria-invalid', 'true');
 	});
 
 	test('expect send hello in the "targetTeam" and reply in a thread', async ({ page }) => {
